@@ -1,0 +1,36 @@
+<div class="data-table-container">
+	<header class="data-table-header">
+		<div class="data-table-header__label">
+			<span id="cm" class="fs-title">Прием пищи</span>
+		</div>
+	</header>
+	<table class="data-table">
+		<thead>
+			<tr>
+				<th>Дата и время</th>
+				<th>Наименование продукта</th>
+				<th>Вес, гр.</th>
+				<th>Белки</th>
+				<th>Жиры</th>
+				<th>Углеводы</th>
+				<th>ГИ</th>
+				<th>Калории</th>
+			</tr>
+		</thead>
+		<tbody ng-init="meals = [
+			{date: '2015-08-08 7:30', name: 'Творог со сметаной', w: 200, proteins: 30, fats: 50, carbohydrates: 70, gi: 30, calories: 100},
+			{date: '2015-08-08 13:30', name: 'Борщ', w: 200, proteins: 30, fats: 70, carbohydrates: 100, gi: 50, calories: 300}
+		]">
+			<tr ng-repeat="row in meals">
+				<td><span ng-bind="row.date"></span></td>
+				<td><span ng-bind="row.name"></span></td>
+				<td><span ng-bind="row.w"></span></td>
+				<td><span ng-bind="row.proteins"></span></td>
+				<td><span ng-bind="row.fats"></span></td>
+				<td><span ng-bind="row.carbohydrates"></span></td>
+				<td><span ng-bind="row.gi"></span></td>
+				<td><span ng-bind="row.calories"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

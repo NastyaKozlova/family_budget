@@ -1,0 +1,19 @@
+{
+  "name": "comeMeal",
+  "version": "0.1.0",
+  "authors": [
+    "Gikovaty Vladimir <gikovaty@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.6",
+    "lumx": "~0.3.83"
+  }
+}

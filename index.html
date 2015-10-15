@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+																									<!--| 
+Активация приложения с помощью нестандартного атрибута ngApp 											| 2
+																										|-->
+<html ng-app>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="bower_components/lumx/dist/lumx.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="client/content/styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="client/content/styles/table.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="client/content/styles/mytl.css" />
+
+</head>
+
+<body>
+    																								<!--| 
+	Инициализация переменной templateUrl значением, содержащим путь к представлению "Питание",			| 4
+	с помощью нестандартного атрибута ngInit 															|-->
+    
+    <div class="card" ng-init="templateUrl='client/app/doxod/doxod.html'">
+        <div class="toolbar">
+            <span class="toolbar__label fs-title">Lorem Ipsum</span>
+            <div class="toolbar__right">
+                <ul>
+                    <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/doxod/doxod.html'}" ng-click="templateUrl = 'client/app/doxod/doxod.html'">Доход</a></li>
+                    <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/rashodi/rashodi.html'}" ng-click="templateUrl = 'client/app/rashodi/rashodi.html'">Расход</a></li>
+                    <!-- <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/rashodi/rashodi.html'}" ng-click="templateUrl = 'client/app/rashodi/rashodi.html'">Приобретаемые товары и услуги</a></li>
+                    <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'physicalActivity'}" ng-click="templateUrl = 'physicalActivity'">Приобретаемые товары и услуги</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrap">
+	    																							<!--| 
+		Вставка в тэга div с помощью нестандартного атрибута ngInit фрагмента разметки, 				| 5
+		вынесенного отдельный HTML-файл, путь к которому хранится в переменной templateUrl 				|-->
+
+        <div class="card" ng-include="templateUrl"></div>
+    </div>
+
+    																								<!--|
+	Вставка в тэга div фрагмента разметку, вынесенного в файл client/app/layout/footer.html,			| 3
+	с помощью нестандартного атрибута ngInclude 														|-->
+																									
+    <div class="site-footer" ng-include="'client/app/layout/footer.html'"></div>
+
+    																								<!--|
+    Подключение фреймворка AngularJS. *.js  															| 1
+    																									|-->								
+    <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/bootstrap/bootstrap.min.js"></script>
+</body>
+
+</html>
