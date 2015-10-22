@@ -2,13 +2,15 @@
 																									<!--| 
 Активация приложения с помощью нестандартного атрибута ngApp 											| 2
 																										|-->
-<html ng-app>
+<html ng-app="comeApp">
 
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="bower_components/lumx/dist/lumx.css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="client/content/styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="client/content/styles/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="client/content/styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="client/content/styles/table.css" />
     <link rel="stylesheet" type="text/css" href="client/content/styles/table.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="client/content/styles/mytl.css" />
@@ -27,8 +29,9 @@
                 <ul>
                     <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/doxod/doxod.html'}" ng-click="templateUrl = 'client/app/doxod/doxod.html'">Доход</a></li>
                     <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/rashodi/rashodi.html'}" ng-click="templateUrl = 'client/app/rashodi/rashodi.html'">Расход</a></li>
-                    <!-- <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/rashodi/rashodi.html'}" ng-click="templateUrl = 'client/app/rashodi/rashodi.html'">Приобретаемые товары и услуги</a></li>
-                    <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'physicalActivity'}" ng-click="templateUrl = 'physicalActivity'">Приобретаемые товары и услуги</a></li> -->
+                    <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/tovar/tovar.html'}" ng-click="templateUrl = 'client/app/tovar/tovar.html'">Приобретаемые товары и услуги</a></li>
+                    <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/kategor/kategor.html'}" ng-click="templateUrl = 'client/app/kategor/kategor.html'">Отчет доходов и расходов</a></li>
+                   
                 </ul>
             </div>
         </div>
@@ -52,7 +55,14 @@
     Подключение фреймворка AngularJS. *.js  															| 1
     																									|-->								
     <script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/bootstrap/bootstrap.min.js"></script>
+	<script src="bower_components/bootstrap/bootstrap.min.js"></script>
+	<script src="client/app.js"></script>
+	<script src="client/app/doxod/doxod.js"></script>
+	<script src="client/app/rashodi/rashodi.js"></script>
+	<script src="client/app/tovar/tovar.js"></script>
+	<script src="client/app/kategor/kategor.js"></script>
+	<script src="bower_components/main.js"></script>
+
 </body>
 
 </html>

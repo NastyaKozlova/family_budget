@@ -1,30 +1,30 @@
-  <h1 align="center" style="color:Black">Отчет</h1>
-  <table class="simple-little-table" cellspacing='0' align="center"  border="1"  width="600" >
+ 
+ <h1 align="center" style="color:Black">Отчет</h1>
+ <div class="data-table-container" ng-controller="rashodiCtrl as rc">
+	<header class="data-table-header">
+		<div class="data-table-header__label">
+			<span id="w" class="fs-title">Отчет</span>
+		</div>
+	</header>
+
+  <table class="data-table"> class="simple-little-table" cellspacing='0' align="center"  border="1"  width="600" >
+  <thead>
   <tr bgcolor="#DCDCDC">
     <td align="center">Статья расходов</td>
     <td align="center">Сумма</td>
     <td align="center">Член семьи</td>
   </tr>
-   <tr>
-    <td align="center">Комунальные расходы</td>
-    <td align="center">500</td>
-	<td align="center">Мама</td>
-  </tr>
-  <tr>
-    <td align="center">Бензин</td>
-    <td align="center">400</td>
-	<td align="center">Папа</td>
-  </tr>
-   <tr>
-    <td align="center">Бензин</td>
-    <td align="center">400</td>
-	<td align="center">Папа</td>
-  </tr>
-  <tr>
-  <td align="center"></td>
-  <td colspan="2" align="center">900</td>
-  </tr>
-</table>
+  </thead>
+<tbody>
+			<tr ng-repeat="row in rc.rashodi">
+				<td><span ng-bind="row.state"></span></td>
+				<td><span ng-bind="row.cost"></span></td>
+				<td><span ng-bind="row.family"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
 <form align="center">
   <button>Показать статистику</button>
 </form>
