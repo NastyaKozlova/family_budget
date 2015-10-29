@@ -3,7 +3,7 @@
     var moduleId = "doxodCtrl"; 
     angular.module("comeApp").controller(moduleId, [doxodCtrl]);
 
-    function weightingCtrl() {
+    function doxodCtrl() {
         var vm = this;
         vm.doxod = [];
 

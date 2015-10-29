@@ -1,18 +1,20 @@
 (function() {
-    
-    var moduleId = "rashodiCtrl"; 
-    angular.module("comeApp").controller(moduleId, [rashodiCtrl]);
+	
+	var moduleId = "rashodiCtrl"; 
+	angular.module("comeApp").controller(moduleId, [rashodiCtrl]);
 
-    function weightingCtrl() {
-        var vm = this;
-        vm.rashodi = [];
+	function rashodiCtrl() {
+		var vm = this;
+		vm.rashodi = [];
 
-        init();
+		init();
 
-        function init () {
-            vm.rashodi = [ 	{ state: 'комунальные расходы', cost: '500', family: 'мама'}, 
-{ state: 'бензин', cost: '400', family: 'папа'}
-{ state: 'бензин', cost: '400', family: 'папа'}  ];
-        }
-    }
+		function init () {
+			vm.rashodi = [ 	
+				{ state: 'комунальные расходы', cost: '500', family: 'мама'},
+				{ state: 'бензин', cost: '400', family: 'папа'},
+				{ state: 'бензин', cost: '400', family: 'папа'}  
+			];
+		}
+	}
 })(); 
