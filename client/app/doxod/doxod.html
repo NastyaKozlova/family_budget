@@ -1,48 +1,29 @@
 
 	
 	<div>
-		<p style="text-align:center; font-size:20px">Регистрация доходов семьи</p>
+		<h3>Регистрация доходов семьи</h3>
 	</div>
 	
-<div class="data-table-container" ng-controller="doxodCtrl as dc">
-	<header class="data-table-header">
-		<div class="data-table-header__label">
-			<span id="w" class="fs-title">Регистрация доходов семьи</span>
-		</div>
+<div ng-controller="doxodCtrl as dc">
 
-	<table style="width:100%" class="data-table">
+
+	<table class="table table-bordered">
 		<thead>
 		<tr>
-			<td>Категория</td>
-			<td>Член семьи</td>
-			<td>январь</td>
-			<td>февраль</td>
-			<td>март</td>
-			<td>апрель</td>
-			<td>май</td>
-			<td>июнь</td>
-			<td>июль</td>
-			<td>август</td>
-			<td>сентябрь</td>
-			<td>октябрь</td>
-			<td>ноябрь</td>
-			<td>декабрь</td>
+			<th align="center">Категория</th>
+			<th align="center">Член семьи</th>
+			<th align="center">Дата</th>
+			<th align="center">Сумма</th>
+			
 		</tr>
 		</thead>
 		<tbody>
 		<tr ng-repeat="row in dc.doxod">
 			<td><span ng-bind="row.state"></span></td>
 			<td><span ng-bind="row.family"></span></td>
-            <td><span ng-bind="row.J"></span></td>
-			<td><span ng-bind="row.F"></span></td>
-			<td><span ng-bind="row.M"></span></td>
-			<td><span ng-bind="row.In"></span></td>
-            <td><span ng-bind="row.Il"></span></td>
-			<td><span ng-bind="row.Av"></span></td><td><span ng-bind="row.date"></span></td>
-			<td><span ng-bind="row.C"></span></td>
-            <td><span ng-bind="row.O"></span></td>
-			<td><span ng-bind="row.N"></span></td>
-			<td><span ng-bind="row.D"></span></td>
+            <td><span ng-bind="row.data"></span></td>
+			<td><span ng-bind="row.suma"></span></td>
+			
 
 		</tr>
 		</tbody>
