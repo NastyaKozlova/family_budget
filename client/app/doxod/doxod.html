@@ -16,6 +16,9 @@
 			<th align="center">Сумма</th>
 			
 		</tr>
+		<TR>
+					<TH ng-repeat="doxod in dc.doxod"> {{ doxod.date | date : "dd MMM" }} </TH>
+				</TR> 
 		</thead>
 		<tbody>
 		<tr ng-repeat="row in dc.doxod">
@@ -31,6 +34,7 @@
 </div>
 
 <div id="button1"><button><a href="1.html">Добавить</a></button></div>
+
 <div id="button2"><button><a href="2.html">Добавить</a></button></div>
 <div id="button3"><button><a href="3.html">Расчет доходов по члену семьи</a></button></div>
 	
