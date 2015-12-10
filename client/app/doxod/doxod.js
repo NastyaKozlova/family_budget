@@ -29,8 +29,7 @@
 })();*/
 
 angular.module('comeApp')
-    .controller('doxodCtrl', function ($scope) {
-        console.log("here");
+    .controller('doxodCtrl', function ($scope, $uibModal) {
         $scope.doxod = [
             {state: 'основная работа', family: 'папа', data: Date.parse('2015-10-10'), suma: '1500'},
             {state: '', family: 'мама', data: Date.parse('2015-10-15'), suma: '1500'},
@@ -49,6 +48,7 @@ angular.module('comeApp')
 
         }
 
+
         $scope.sortByDate=function(isSorted){
 
             if(isSorted){
@@ -62,5 +62,46 @@ angular.module('comeApp')
 
         $scope.isSumSorted = false;
         $scope.isDateSorted = false;
+
+        $scope.isFormOpened = false;
+
+        $scope.newDoxod = {
+                state: null,
+                family: null,
+                data: null,
+                suma: null
+            };
+
+        $scope.addDoxod = function (e) {
+            e.preventDefault();
+            console.log("here");
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl:"myModalContent.html",
+                controller: 'ModalInstanceCtrl',
+                scope: $scope.newDoxod,
+                resolve: {
+                    /*items: function () {
+                        return $scope.items;
+                    }*/
+                }
+            });
+        }
     });
 
+
+angular.module('comeApp').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance) {
+
+    /*$scope.items = items;
+    $scope.selected = {
+        item: $scope.items[0]
+    };
+
+    $scope.ok = function () {
+        $uibModalInstance.close($scope.selected.item);
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };*/
+});

@@ -15,5 +15,8 @@
   "devDependencies": {
     "angular": "~1.4.6",
     "lumx": "~0.3.83"
+  },
+  "dependencies": {
+    "angular-bootstrap": "~0.14.3"
   }
 }
