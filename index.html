@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 																									<!--|
 Активация приложения с помощью нестандартного атрибута ngApp 											| 2
 																										|-->
@@ -12,7 +12,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="client/content/styles/font-awesome.min.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="client/content/styles/table.css" /> -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="client/content/styles/mytl.css" /> -->
+    <link rel="stylesheet" type="text/css" href="client/content/styles/styles.css" />
 
 </head>
 
@@ -25,10 +25,9 @@
 
         <div class="card" ng-init="templateUrl='client/app/doxod/doxod.html'">
             <div class="toolbar">
-                <span class="toolbar__label fs-title">Lorem Ipsum</span>
                 <div class="toolbar__right">
-                    <ul>
-                        <li  class="nav fs-regular"; class="btn btn-info" ><a href="#" ng-class="{active: templateUrl == 'client/app/doxod/doxod.html'}" ng-click="templateUrl = 'client/app/doxod/doxod.html'">Доход</a></li>
+                    <ul class="list-inline">
+                        <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/doxod/doxod.html'}" ng-click="templateUrl = 'client/app/doxod/doxod.html'">Доход</a></li>
                         <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/rashodi/rashodi.html'}" ng-click="templateUrl = 'client/app/rashodi/rashodi.html'">Расход</a></li>
                         <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/tovar/tovar.html'}" ng-click="templateUrl = 'client/app/tovar/tovar.html'">Приобретаемые товары и услуги</a></li>
                         <li class="nav fs-regular"><a href="#" ng-class="{active: templateUrl == 'client/app/kategor/kategor.html'}" ng-click="templateUrl = 'client/app/kategor/kategor.html'">Отчет доходов и расходов</a></li>

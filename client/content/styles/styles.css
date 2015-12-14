@@ -7,6 +7,19 @@ html, body {
 
 a {
 	text-decoration: none;
+	font-size: 16px;
+}
+
+table {
+	margin-top : 20px;
+}
+
+.popup {
+	padding : 10px;
+}
+
+.container {
+	margin-top : 15px;
 }
 
 .nav {
@@ -31,5 +44,6 @@ a {
   height: 4em; 
 }
 .site-footer {
-  background: orange;
+  margin-top: 20px;
+  text-align: center;
 }

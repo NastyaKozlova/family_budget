@@ -1,19 +1,21 @@
 
 
 	<div>
-		<h3>Регистрация доходов семьи</h3>
+		<h2 class="text-center">Регистрация доходов семьи</h2>
 	</div>
 
-<div ng-controller="doxodCtrl">
+<div ng-controller="doxodCtrl as dc">
 
-
+<div class="text-right">
+		<a href="#" class="btn btn-success" ng-click="dc.addDoxod()">Добавить</a>
+	</div>
 	<table class="table table-bordered">
 		<thead>
 		<tr>
 			<th>Категория</th>
 			<th>Член семьи</th>
-			<th>Дата <input ng-model="isDateSorted" class="check" type="checkbox" ng-change="sortByDate(isDateSorted)"/></th>
-			<th>Сумма <input ng-model="isSumSorted" class="check" type="checkbox" ng-change="sortBySum(isSumSorted)"/></th>
+			<th>Дата <input ng-model="dc.isDateSorted" class="check" type="checkbox" ng-change="dc.sortByDate(dc.isDateSorted)"/></th>
+			<th>Сумма <input ng-model="dc.isSumSorted" class="check" type="checkbox" ng-change="dc.sortBySum(dc.isSumSorted)"/></th>
 			<th class="text-center">Управление доходом</th>
 
 		</tr>
@@ -22,20 +24,21 @@
 		</tr>-->
 		</thead>
 		<tbody>
-			<tr ng-repeat="row in doxod">
+			<tr ng-repeat="row in dc.doxod">
+				
 				<td><span ng-bind="row.state"></span></td>
 				<td><span ng-bind="row.family"></span></td>
 				<td ng-bind="row.data|date:'MMM dd, yyyy'"></td>
 				<td><span ng-bind="row.suma"></span></td>
 				<td class="text-center">
-					<a href="#" class="btn btn-warning">Редактировать</a>
-					<a href="#" class="btn btn-danger">Удалить</a>
+					<a href="#" class="btn btn-primary" ng-click="dc.editItem(row);">Редактировать</a>
+					<a href="#" class="btn btn-danger" ng-click="dc.removeItem(row);">Удалить</a>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="text-right">
-		<a href="#" class="btn btn-success" ng-click="addDoxod($event)">Добавить</a>
+		<a href="#" class="btn btn-success" ng-click="dc.addDoxod()">Добавить</a>
 	</div>
 
 	<script type="text/ng-template" id="myModalContent.html">
@@ -44,9 +47,4 @@
 		</div>
 	</script>
 </div>
-
-<div id="button1"><button><a href="1.html">Добавить</a></button></div>
-
-<div id="button2"><button><a href="2.html">Добавить</a></button></div>
-<div id="button3"><button><a href="3.html">Расчет доходов по члену семьи</a></button></div>
 

@@ -1,44 +1,37 @@
- 
- <h1 align="center" style="color:Black">Отчет</h1>
- <div class="data-table-container" ng-controller="rashodiCtrl as rc">
-	<header class="data-table-header">
-		<div class="data-table-header__label">
-			<span id="w" class="fs-title">Отчет</span>
-		</div>
-	</header>
-
-  <table class="table table-bordered">
-  <thead>
-  <tr>
-    <td align="center">Статья расходов</td>
-    <td align="center">Сумма</td>
-    <td align="center">Член семьи</td>
-  </tr>
-  </thead>
-<tbody>
+<h2 class="text-center">Регистрация расходов семьи</h2>
+<div class="data-table-container" ng-controller="rashodiCtrl as rc">
+	<div class="text-right">
+		<a href="#" class="btn btn-success" ng-click="rc.addrashodi()">Добавить</a>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Статья расходов</th>
+				<th>Сумма <input ng-model="rc.isSumSorted" class="check" type="checkbox" ng-change="rc.sortBySum(rc.isSumSorted)"/></th>
+				<th>Член семьи</th>
+				<th class="text-center">Управление расходом</th>
+			</tr>
+		</thead>
+		<tbody>
 			<tr ng-repeat="row in rc.rashodi">
 				<td><span ng-bind="row.state"></span></td>
 				<td><span ng-bind="row.cost"></span></td>
 				<td><span ng-bind="row.family"></span></td>
+				<td class="text-center">
+					<a href="#" class="btn btn-primary" ng-click="rc.editItem(row);">Редактировать</a>
+					<a href="#" class="btn btn-danger" ng-click="rc.removeItem(row);">Удалить</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
-  <div ng-controller="rashodiCtrl as rc">
-     <button ng-click="rc.openImg('Image')"  class="btn btn-primary btn-lg"> Показать картинку </button> 
-    <div id="Image" style="display:none;">
-            <img  src="../client/app/doxod/1.jpg" width="300 px" height="200px" alt="текст">
-        
+	<div class="text-right">
+		<a href="#" class="btn btn-success" ng-click="rc.addrashodi()">Добавить</a>
+	</div>
+	<div class="text-center" ng-controller="rashodiCtrl as rc">
+		<button ng-click="rc.openImg('Image')"  class="btn btn-primary btn-lg"> Показать картинку </button> 
+		<div id="Image" style="display:none;">
+			<img  src="../client/app/doxod/1.jpg" width="300 px" height="200px" alt="текст">
+		</div>
+	</div>
+	
 </div>
-</div>
-
-<form align="center">
-  <button>Показать статистику</button>
-</form>
-    Сортировать
-    <form>
-  <select>
-  <option>По членам семьи</option>
-  <option>По сумме</option>
-  <option>По статье расходов</option>
-  </select>
-  </form>

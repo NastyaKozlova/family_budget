@@ -1,40 +1,33 @@
-﻿
-	<center>
+﻿	<h2 class="text-center">Отчет доходы и расходы по категориям бюджета</h2>
 	<div class="data-table-container" ng-controller="kategorCtrl as kc">
-	<header class="data-table-header">
-		<div class="data-table-header__label">
-			<span id="w" class="fs-title">Отчет доходы и расходы по категориям бюджета</span>
-		</div>
-	</header>
+	<div class="text-right">
+		<a href="#" class="btn btn-success" ng-click="kc.addkategor()">Добавить</a>
+	</div>
 	<table class="table table-bordered">
 		<thead>
-
-			<tr>
-			<td>Доход</td>
-			  <td>Расход</td>
-			  <td>Член семьи</td>
-			  <td>Сумма</td>
-			  <td>Месяц</td>
-			   </tr>
+			<th>Доход</th>
+			<th>Расход</th>
+			<th>Член семьи</th>
+			<th>Сумма <input ng-model="kc.isSumSorted" class="check" type="checkbox" ng-change="kc.sortBySum(kc.isSumSorted)"/></th>
+			<th>Месяц</th>
+			<th class="text-center">Управление категориями</th>
         </thead>
 		<tbody>
-
-			 <tr ng-repeat="row in kc.kategor">
-			 
-			  <td><span ng-bind="row.doxod"></span></td>
-			<td><span ng-bind="row.rasxod"></span></td>
-			<td><span ng-bind="row.family"></span></td>
-			<td><span ng-bind="row.cost"></span></td>
-			<td><span ng-bind="row.mounth"></span></td>
-
-			
+			<tr ng-repeat="row in kc.kategor">
+				<td><span ng-bind="row.doxod"></span></td>
+				<td><span ng-bind="row.rasxod"></span></td>
+				<td><span ng-bind="row.family"></span></td>
+				<td><span ng-bind="row.cost"></span></td>
+				<td><span ng-bind="row.mounth"></span></td>
+				<td class="text-center">
+					<a href="#" class="btn btn-primary" ng-click="kc.editItem(row);">Редактировать</a>
+					<a href="#" class="btn btn-danger" ng-click="kc.removeItem(row);">Удалить</a>
+				</td>
 			</tr>
-
-</tbody>
+		</tbody>
 	</table>
+	<div class="text-right">
+		<a href="#" class="btn btn-success" ng-click="kc.addkategor()">Добавить</a>
+	</div>
 </div>
-
-
-		
-			</center>
 	
